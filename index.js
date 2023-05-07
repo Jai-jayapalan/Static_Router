@@ -1,13 +1,24 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
+// setting the view engine for ejs
 app.set('view engine', 'ejs');
+app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
 
+
+// Available services 
 const services = [
     'web development', 'App development', 'Game development',
     'Cloud computing', 'Termux' , 'Metasploit framework'
 ];
+
+
+// routes
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname + '/public/home.html'));
+})
 
 // middleware function for dynamic file
 app.get('/service/:id', (req, res, next) => {
@@ -18,6 +29,7 @@ app.get('/service/:id', (req, res, next) => {
         serviceName: serviceName,
         seviceNum:number
     };
+    // data transfering....
     res.render('index', {data});
     next()
 });
