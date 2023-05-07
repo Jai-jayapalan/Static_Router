@@ -7,6 +7,7 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/product', express.static('public/images'));
 
 // Available services 
 const services = [
@@ -22,7 +23,15 @@ app.get('/',(req,res)=>{
 app.get('/contact',(req,res)=>{
     res.sendFile(path.join(__dirname + '/public/contact.html'));
 })
-
+app.get('/product',(req,res)=>{
+    res.sendFile(path.join(__dirname + '/public/product.html'))
+})
+app.get('/about',(req,res)=>{
+    res.sendFile(path.join(__dirname + '/public/about.html'))
+})
+app.get('/user',(req,res)=>{
+    res.sendFile(path.join(__dirname + '/public/user.html'))
+})
 // middleware function for dynamic file
 app.get('/service/:id', (req, res, next) => {
     const number = req.params.id;
