@@ -19,6 +19,9 @@ const services = [
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname + '/public/home.html'));
 })
+app.get('/contact',(req,res)=>{
+    res.sendFile(path.join(__dirname + '/public/contact.html'));
+})
 
 // middleware function for dynamic file
 app.get('/service/:id', (req, res, next) => {
