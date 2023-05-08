@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .container{
+            display: inline-block;
+            width: 300px;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px ;
+            box-shadow: 7px 10px 5px gainsboro;
+        }
+        p{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data page</h1>
+        <p>
+            Your name is <%= Name %>
+        </p>
+        <p>
+            Your age is <%= Age %>
+        </p>
+    </div>
+</body>
+</html>
